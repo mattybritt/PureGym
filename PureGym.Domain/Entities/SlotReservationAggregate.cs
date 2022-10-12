@@ -1,25 +1,35 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using PureGym.Domain.Repositories;
 
 namespace PureGym.Domain
 {
     public class SlotReservationAggregate
     {
-        public SlotReservationAggregate(List<UserId> reservations, Slot slot)
+        private SlotReservationAggregate() { }
+
+        public static SlotReservationAggregate New(Slot slot)
         {
-            Reservations = reservations ?? new List<UserId>();
-            Slot = slot;
+            return new SlotReservationAggregate()
+            {
+                Reservations = new List<UserId>(),
+                Slot = slot,
+            };
         }
 
-        public List<UserId> Reservations { get; }
-        public Slot Slot { get; }
-
-        public ReservationStatus Reserve(IAreaRepository areaRepository, UserId userId)
+        public static SlotReservationAggregate Load(List<UserId> reservations, Slot slot)
         {
-            var area = areaRepository.GetArea(Slot.AreaId);
+            return new SlotReservationAggregate()
+            {
+                Reservations = reservations ?? new List<UserId>(),
+                Slot = slot,
+            };
+        }
+
+        public List<UserId> Reservations { get; init; }
+        public Slot Slot { get; init; }
+
+        public ReservationStatus Reserve(IRepository<AreaAggregate, AreaId> areaRepository, UserId userId)
+        {
+            var area = areaRepository.GetById(Slot.AreaId);
 
             if (Reservations.Count == area.AllowedSessions)
             {

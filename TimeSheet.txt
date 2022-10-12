@@ -1,4 +1,4 @@
 mins | Description
 
-30 mins - rough screen sketches aggregate/invariant identification, and planning
-10 min - project scaffold 
+30 mins - rough screen sketches aggregate/invariant identification and planning
+60 mins - aggregate definitions, repositories, queries, tests
