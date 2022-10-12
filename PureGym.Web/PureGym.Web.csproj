@@ -23,9 +23,103 @@
 
   <ItemGroup>
     <!-- Don't publish the SPA source files, but do show them in the project files list -->
+    <Compile Remove="ClientApp\**" />
     <Content Remove="$(SpaRoot)**" />
+    <Content Remove="ClientApp\**" />
+    <EmbeddedResource Remove="ClientApp\**" />
     <None Remove="$(SpaRoot)**" />
+    <None Remove="ClientApp\**" />
     <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="ClientApp\.angular\cache\angular-webpack\93d172b0b3ceb94c1d705eb978f1cd2e016408dc\0.pack" />
+    <None Remove="ClientApp\.angular\cache\angular-webpack\93d172b0b3ceb94c1d705eb978f1cd2e016408dc\1.pack" />
+    <None Remove="ClientApp\.angular\cache\angular-webpack\93d172b0b3ceb94c1d705eb978f1cd2e016408dc\2.pack" />
+    <None Remove="ClientApp\.angular\cache\angular-webpack\93d172b0b3ceb94c1d705eb978f1cd2e016408dc\3.pack" />
+    <None Remove="ClientApp\.angular\cache\angular-webpack\93d172b0b3ceb94c1d705eb978f1cd2e016408dc\4.pack" />
+    <None Remove="ClientApp\.angular\cache\angular-webpack\93d172b0b3ceb94c1d705eb978f1cd2e016408dc\index.pack" />
+    <None Remove="ClientApp\.angular\cache\angular-webpack\93d172b0b3ceb94c1d705eb978f1cd2e016408dc\index.pack.old" />
+    <None Remove="ClientApp\.angular\cache\angular-webpack\bec6e0febf1baf528815c64cad29080e85b94bae\0.pack" />
+    <None Remove="ClientApp\.angular\cache\angular-webpack\bec6e0febf1baf528815c64cad29080e85b94bae\index.pack" />
+    <None Remove="ClientApp\.angular\cache\babel-webpack\3d3b8b9c3e85c705ed1a219c0435da88.json" />
+    <None Remove="ClientApp\.angular\cache\babel-webpack\519e6eb31bcb0c335879943850ca124b.json" />
+    <None Remove="ClientApp\.angular\cache\babel-webpack\537404f371dba8f5247be7247922615d.json" />
+    <None Remove="ClientApp\.angular\cache\babel-webpack\7ecba58c8fe68141472af53115816160.json" />
+    <None Remove="ClientApp\.angular\cache\babel-webpack\83ca5a3a4627eb0676b9b4c7999fe136.json" />
+    <None Remove="ClientApp\.angular\cache\babel-webpack\8aeb9c9542525bc479c8825cac76201f.json" />
+    <None Remove="ClientApp\.angular\cache\babel-webpack\9ae122f5d9155f13e103e8a9aaae97c6.json" />
+    <None Remove="ClientApp\.angular\cache\babel-webpack\9d0457e107e0cc1d1b52580a10437d8e.json" />
+    <None Remove="ClientApp\.angular\cache\babel-webpack\a9b47629fa5353af66d0f2cf6ec42972.json" />
+    <None Remove="ClientApp\.angular\cache\babel-webpack\b12dcccc796cea741ac2355844edde7a.json" />
+    <None Remove="ClientApp\.angular\cache\babel-webpack\b5e6949f6a34a4c19e90869e5a704520.json" />
+    <None Remove="ClientApp\.angular\cache\babel-webpack\b7cfe3794ec78871d8da773e5ac0556b.json" />
+    <None Remove="ClientApp\.angular\cache\babel-webpack\c2b76001edb8a034d8aa18b87a79a8bc.json" />
+    <None Remove="ClientApp\.angular\cache\babel-webpack\d82b5d9e0c0a56f4bfb134cd026fb874.json" />
+    <None Remove="ClientApp\.angular\cache\babel-webpack\df5e9ebd41b6faeecc3b23b55432cc77.json" />
+    <None Remove="ClientApp\.angular\cache\babel-webpack\e542018a1487f26ef2c4186bca7d3a0f.json" />
+    <None Remove="ClientApp\.angular\cache\babel-webpack\e89cc2fb095eaa9ddbf75b13039bd403.json" />
+    <None Remove="ClientApp\.angular\cache\babel-webpack\ffde8001001a6f7f8bc8671ec881c847.json" />
+    <None Remove="ClientApp\.browserslistrc" />
+    <None Remove="ClientApp\.editorconfig" />
+    <None Remove="ClientApp\.gitignore" />
+    <None Remove="ClientApp\angular.json" />
+    <None Remove="ClientApp\aspnetcore-https.js" />
+    <None Remove="ClientApp\karma.conf.js" />
+    <None Remove="ClientApp\package-lock.json" />
+    <None Remove="ClientApp\package.json" />
+    <None Remove="ClientApp\proxy.conf.js" />
+    <None Remove="ClientApp\README.md" />
+    <None Remove="ClientApp\src\api-authorization\api-authorization.constants.ts" />
+    <None Remove="ClientApp\src\api-authorization\api-authorization.module.spec.ts" />
+    <None Remove="ClientApp\src\api-authorization\api-authorization.module.ts" />
+    <None Remove="ClientApp\src\api-authorization\authorize.guard.spec.ts" />
+    <None Remove="ClientApp\src\api-authorization\authorize.guard.ts" />
+    <None Remove="ClientApp\src\api-authorization\authorize.interceptor.spec.ts" />
+    <None Remove="ClientApp\src\api-authorization\authorize.interceptor.ts" />
+    <None Remove="ClientApp\src\api-authorization\authorize.service.spec.ts" />
+    <None Remove="ClientApp\src\api-authorization\authorize.service.ts" />
+    <None Remove="ClientApp\src\api-authorization\login-menu\login-menu.component.css" />
+    <None Remove="ClientApp\src\api-authorization\login-menu\login-menu.component.html" />
+    <None Remove="ClientApp\src\api-authorization\login-menu\login-menu.component.spec.ts" />
+    <None Remove="ClientApp\src\api-authorization\login-menu\login-menu.component.ts" />
+    <None Remove="ClientApp\src\api-authorization\login\login.component.css" />
+    <None Remove="ClientApp\src\api-authorization\login\login.component.html" />
+    <None Remove="ClientApp\src\api-authorization\login\login.component.spec.ts" />
+    <None Remove="ClientApp\src\api-authorization\login\login.component.ts" />
+    <None Remove="ClientApp\src\api-authorization\logout\logout.component.css" />
+    <None Remove="ClientApp\src\api-authorization\logout\logout.component.html" />
+    <None Remove="ClientApp\src\api-authorization\logout\logout.component.spec.ts" />
+    <None Remove="ClientApp\src\api-authorization\logout\logout.component.ts" />
+    <None Remove="ClientApp\src\app\app.component.html" />
+    <None Remove="ClientApp\src\app\app.component.ts" />
+    <None Remove="ClientApp\src\app\app.module.ts" />
+    <None Remove="ClientApp\src\app\app.server.module.ts" />
+    <None Remove="ClientApp\src\app\counter\counter.component.html" />
+    <None Remove="ClientApp\src\app\counter\counter.component.spec.ts" />
+    <None Remove="ClientApp\src\app\counter\counter.component.ts" />
+    <None Remove="ClientApp\src\app\fetch-data\fetch-data.component.html" />
+    <None Remove="ClientApp\src\app\fetch-data\fetch-data.component.ts" />
+    <None Remove="ClientApp\src\app\home\home.component.html" />
+    <None Remove="ClientApp\src\app\home\home.component.ts" />
+    <None Remove="ClientApp\src\app\nav-menu\nav-menu.component.css" />
+    <None Remove="ClientApp\src\app\nav-menu\nav-menu.component.html" />
+    <None Remove="ClientApp\src\app\nav-menu\nav-menu.component.ts" />
+    <None Remove="ClientApp\src\assets\.gitkeep" />
+    <None Remove="ClientApp\src\environments\environment.prod.ts" />
+    <None Remove="ClientApp\src\environments\environment.ts" />
+    <None Remove="ClientApp\src\index.html" />
+    <None Remove="ClientApp\src\main.ts" />
+    <None Remove="ClientApp\src\polyfills.ts" />
+    <None Remove="ClientApp\src\styles.css" />
+    <None Remove="ClientApp\src\test.ts" />
+    <None Remove="ClientApp\tsconfig.app.json" />
+    <None Remove="ClientApp\tsconfig.json" />
+    <None Remove="ClientApp\tsconfig.spec.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PureGym.Domain\PureGym.Domain.csproj" />
   </ItemGroup>
 
     <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

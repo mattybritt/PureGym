@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PureGym.Web", "PureGym.Web\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PureGym.Domain", "PureGym.Domain\PureGym.Domain.csproj", "{2C6F5ADB-CD68-4FD4-90EB-00ECE183923F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PureGym.Tests", "PureGym.Tests\PureGym.Tests.csproj", "{7F7B0C87-4F02-4780-836C-A5EA8593AEFC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{2C6F5ADB-CD68-4FD4-90EB-00ECE183923F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2C6F5ADB-CD68-4FD4-90EB-00ECE183923F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2C6F5ADB-CD68-4FD4-90EB-00ECE183923F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F7B0C87-4F02-4780-836C-A5EA8593AEFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F7B0C87-4F02-4780-836C-A5EA8593AEFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F7B0C87-4F02-4780-836C-A5EA8593AEFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F7B0C87-4F02-4780-836C-A5EA8593AEFC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

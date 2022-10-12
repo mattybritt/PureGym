@@ -14,11 +14,10 @@ namespace PureGym.Domain
         }
 
         public List<UserId> Reservations { get; private set; }
-        public AreaId AreaId { get; private set; }
 
         public ReservationStatus Reserve(IAreaRepository areaRepository, UserId userId)
         {
-            var area = areaRepository.GetArea(AreaId);
+            var area = areaRepository.GetArea(new AreaId("")); // TODO
 
             if (Reservations.Count == area.AllowedSessions)
             {
@@ -34,7 +33,6 @@ namespace PureGym.Domain
 
                 return ReservationStatus.Reserved;
             }
-
         }
     }
 
@@ -48,18 +46,74 @@ namespace PureGym.Domain
 
     public class UserId
     {
-        public int Id { get; set; }
+        public UserId(string id)
+        {
+            Id = id;
+        }
+
+        public string Id { get; }
     }
 
     public class AreaId
     {
-        public int Id { get; set; }
+        public AreaId(string id)
+        {
+            Id = id;
+        }
+
+        public string Id { get; }
+
+        public override string ToString()
+        {
+            return Id;
+        }
     }
 
     public class Slot
     {
-        public DateTime Date { get; set; }
-        public int HourOfDay { get; set; }
+        public Slot(DateTime date, HourOfDay hourOfDay, SlotHourPeriod period, AreaId areaId)
+        {
+            Date = date;
+            HourOfDay = hourOfDay;
+            AreaId = areaId;
+            SlotHourPeriod = period;
+        }
+
+        public DateTime Date { get; }
+        public HourOfDay HourOfDay { get; }
+        public AreaId AreaId { get; }
+        public SlotHourPeriod SlotHourPeriod { get; }
+
+        public string GetIdentifier()
+        {
+            // Slot entity needs to be uniquely identifiable and queryable
+            return $"{Date.Year}{Date.Month}{Date.Day}_{HourOfDay}_{(int)SlotHourPeriod}_{AreaId}";
+        }
+    }
+
+    public enum SlotHourPeriod
+    {
+        One = 1,
+        Two = 2,
+        Three = 3,
+        Four = 4
+    }
+
+    public class HourOfDay
+    {
+        public HourOfDay(int hour)
+        {
+            if (hour < 0 || hour > 23) throw new ArgumentException("Invalid hour");
+
+            Hour = hour;
+        }
+
+        public int Hour { get; }
+
+        public override string ToString()
+        {
+            return Hour.ToString();
+        }
     }
 
     public class Area
