@@ -6,5 +6,6 @@
         public HourOfDay HourOfDay { get; internal set; }
         public SlotHourPeriod Period { get; internal set; }
         public AreaId AreaId { get; internal set; }
+        public UserId UserId { get; internal set; }
     }
 }
